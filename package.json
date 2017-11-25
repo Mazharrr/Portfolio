@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "My personal portfolio site",
   "main": "index.js",
+  "engines": {
+    "node": "7.x"
+  },
   "scripts": {
     "start": "nodemon index.js"
   },
