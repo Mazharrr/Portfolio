@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Mazhar Buttar</title>
+  <link rel="stylesheet" type="text/css" href="./font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="./semantic/semantic.min.css">
+  <link rel="icon" href="./images/favicon.ico?v=2" />
+  <style type="text/css">
+    h2.ui.header .sub.header {
+      padding-left: 66px;
+    }
+    .ui.list, .list-extra {
+      padding-left: 10% !important;
+    }
+    .date {
+      float: right;
+    }
+    .footer {
+      padding: 20px !important;
+      font-size: 12px !important;
+      text-align: right;
+    }
+
+    .footer i {
+      margin: 0 5px;
+      color: white;
+    }
+
+    .footer i:hover {
+      color: black;
+    }
+    .ui.divided.items>.item:first-child {
+      padding-bottom: 30px;
+    }
+
+    .ui.divided.items>.item:last-child {
+      padding-top: 30px;
+    }
+
+    .ui.segment {
+      padding: 50px;
+      margin: 50px;
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .card .content {
+      text-align: center;
+    }
+
+    .hidden.menu {
+      display: none;
+    }
+    .ui.text.container i {
+      padding: 10px;
+      color: white;
+    }
+
+    .ui.text.container i:hover {
+      transform: scale(1.2, 1.2);
+      color: grey;
+    }
+
+    #info {
+      background-image: url("./images/header.png");
+    }
+
+    #experience {
+      padding: 100px 0;
+      background-image: url('./images/experience.png');
+    }
+
+    #skills {
+      background-image: url("./images/skills.png");
+    }
+
+    #projects {
+      padding: 100px 0;
+      background-image: url("./images/projects.png");
+    }
+
+    .parallax {
+      background-attachment: fixed !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+    }
+
+    .masthead.segment {
+      min-height: 500px;
+      padding: 1em 0em;
+    }
+
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+
+    .masthead h1.ui.header {
+      margin-top: 1em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+
+    .ui.vertical.stripe .button+h3,
+    .ui.vertical.stripe p+h3 {
+      margin-top: 3em;
+    }
+
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+
+    .ui.items>.item>.image+.content {
+      color: white;
+    }
+
+    .card:hover {
+      transform: scale(1.1, 1.1);
+    }
+  </style>
+
+  <script src="./jquery/jquery.min.js"></script>
+  <script src="./semantic/semantic.min.js"></script>
+  <script>
+    $(document)
+      .ready(function () {
+        $('.masthead')
+          .visibility({
+            once: false,
+            onBottomPassed: function () {
+              $('.fixed.menu').transition('fade in');
+            },
+            onBottomPassedReverse: function () {
+              $('.fixed.menu').transition('fade out');
+            }
+          });
+        $('.ui.sidebar')
+          .sidebar('attach events', '.toc.item');
+        $(".menu").find("a").click(function (e) {
+          e.preventDefault();
+          var section = $(this).attr("href");
+          $("html, body").animate({
+            scrollTop: $(section).offset().top
+          });
+        });
+      });
+  </script>
+</head>
+
+<body>
+  <div class="ui large top fixed hidden menu">
+    <div class="ui container">
+      <a class="active item" href="#info">Info</a>
+      <a class="item" href="#skills">Skills</a>
+      <a class="item" href="#projects">Projects</a>
+      <a class="item" href="#experience">Experience</a>
+    </div>
+  </div>
+  </div>
+  <div class="ui vertical inverted sidebar menu">
+    <a class="active item" href="#info">Info</a>
+    <a class="item" href="#skills">Skills</a>
+    <a class="item" href="#projects">Projects</a>
+    <a class="item" href="#experience">Experience</a>
+  </div>
+  <div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment parallax" id="info">
+
+      <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+          <a class="toc item">
+            <i class="sidebar icon"></i>
+          </a>
+          <a class="active item" href="#info">Info</a>
+          <a class="item" href="#skills">Skills</a>
+          <a class="item" href="#projects">Projects</a>
+          <a class="item" href="#experience">Experience</a>
+        </div>
+      </div>
+
+      <div class="ui text container">
+        <h1 class="ui inverted header">
+          Mazhar Buttar
+        </h1>
+        <h2>Full-Stack Software Engineer</h2>
+        <div>
+          <a href="https://www.linkedin.com/in/mb3311/">
+            <i class="fa fa-linkedin fa-4x"></i>
+          </a>
+          <a href="https://github.com/mazharrr">
+            <i class="fa fa-github fa-4x"></i>
+          </a>
+          <a href="mailto:maz.buttar@gmail.com">
+            <i class="fa fa-envelope fa-4x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui vertical stripe segment parallax" id="skills">
+      <div class="ui middle aligned stackable grid container ">
+        <h1 class="ui center aligned icon header">
+          Skills
+        </h1>
+        <div class="row">
+          <div class="ui six stackable cards">
+            <div class="black card">
+              <div class="image">
+                <img src="/images/js.png">
+              </div>
+              <div class="content">
+                Javascript (ES6)
+              </div>
+            </div>
+            <div class="black card">
+              <div class="image">
+                <img src="/images/html.png">
+              </div>
+              <div class="content">
+                HTML 5
+              </div>
+            </div>
+            <div class="black card">
+              <div class="image">
+                <img src="/images/css.png">
+              </div>
+              <div class="content">
+                CSS 3
+              </div>
+            </div>
+            <div class="black card">
+              <div class="image">
+                <img src="/images/react.png">
+              </div>
+              <div class="content">
+                React
+              </div>
+            </div>
+            <div class="black card">
+              <div class="image">
+                <img src="/images/redux.png">
+              </div>
+              <div class="content">
+                Redux
+              </div>
+            </div>
+            <div class="black card">
+              <div class="image">
+                <img src="/images/express.png">
+              </div>
+              <div class="content">
+                ExpressJS
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="ui six stackable cards">
+            <div class="black card">
+              <div class="image">
+                <img src="/images/sequelize.png">
+              </div>
+              <div class="content">
+                SequelizeJS
+              </div>
+            </div>
+            <div class="black card">
+              <div class="image">
+                <img src="/images/node.png">
+              </div>
+              <div class="content">
+                NodeJS
+              </div>
+            </div>
+            <div class="black card">
+              <div class="image">
+                <img src="/images/polymer.png">
+              </div>
+              <div class="content">
+                Polymer
+              </div>
+            </div>
+            <div class="black card">
+              <div class="image">
+                <img src="/images/postgresql.png">
+              </div>
+              <div class="content">
+                PostgreSQL
+              </div>
+            </div>
+            <div class="black card">
+              <div class="image">
+                <img src="/images/git.png">
+              </div>
+              <div class="content">
+                Git
+              </div>
+            </div>
+            <div class="black card">
+              <div class="image">
+                <img src="/images/chai.png">
+              </div>
+              <div class="content">
+                ChaiJS and Similar Assertion Tests
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax" id="projects">
+    <div class="ui segment">
+      <h1 class="ui center aligned icon header">
+        Projects
+      </h1>
+      <div class="ui divided items">
+        <div class="item">
+          <div class="ui large image">
+            <img src="/images/paintwars.png">
+          </div>
+          <div class="middle aligned content">
+            <div class="header">
+              Paint Wars
+            </div>
+            <div class="description">
+              <p>Paint wars is a spin off of the classic game Bomberman, with a special twist. Players can place bombs and collect
+                power ups similar to the original Bomberman, but the explosion leaves behind the paint splatter. The paint
+                splatter is used to determine a player's score, and players can paint over existing painted tiles to steal
+                points from the opposition. Instead of losing after being struck by a bomb, a player is instead stunned and
+                have their paint and power ups removed. The player with the most points left by the time the clock runs out
+                wins the game.</p>
+              <p>The game also features a lobby system that allows for simultaneous games to run at once.</p>
+            </div>
+            <div class="extra">
+              <div class="ui label">Javascript</div>
+              <div class="ui label">HTML</div>
+              <div class="ui label">CSS</div>
+              <div class="ui label">React</div>
+              <div class="ui label">Redux</div>
+              <div class="ui label">Express</div>
+              <div class="ui label">Node</div>
+              <div class="ui label">Phaser.io</div>
+              <div class="ui label">Socket.io</div>
+              <div class="ui label">Agile/SCRUM</div>
+              <div class="ui label">Git</div>
+            </div>
+            <div class="extra">
+              <a class="ui right floated secondary button" href="http://paint-wars.herokuapp.com/">
+                View Project
+                <i class="right chevron icon"></i>
+              </a>
+              <a class="ui right floated secondary button" href="https://github.com/Mazharrr/Paint-Wars">
+                View Source&nbsp
+                <i class="fa fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="ui large image">
+            <img src="/images/socket.png">
+          </div>
+          <div class="middle aligned content">
+            <div class="header">
+              Socket Ships
+            </div>
+            <div class="description">
+              <p>Socket ships is a multiplayer game created using Phaser.io and Socket.io. Players play as a ship that have
+                experience points and health. Players can also attack by moving the mouse and clicking at the direction in
+                which they want to shoot. By hitting opposing players, a ship gains experience points which affect both the
+                speed of the ship and the rate at which it fires. There are also chests that spawn in random locations on
+                the map that players can use to replenish health and gain experience.</p>
+            </div>
+            <div class="extra">
+              <div class="ui label">Javascript</div>
+              <div class="ui label">HTML</div>
+              <div class="ui label">CSS</div>
+              <div class="ui label">Phaser.io</div>
+              <div class="ui label">Socket.io</div>
+              <div class="ui label">Git</div>
+            </div>
+            <div class="extra">
+              <a class="ui right floated secondary button" href="http://socket-ships.herokuapp.com/">
+                View Project
+                <i class="right chevron icon"></i>
+              </a>
+              <a class="ui right floated secondary button" href="https://github.com/Mazharrr/Socket-Ships">
+                View Source&nbsp
+                <i class="fa fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax" id="experience">
+    <div class="ui segment">
+        <h1 class="ui center aligned icon header">
+            Experience
+        </h1>
+        <h2 class="ui header">
+          <img src="/images/cim.png" class="ui circular image">
+          Comcast Interactive Media
+          <div class="sub header">Ui Developer - CX Components Team <span class="date">May 2017 - Present</span></div>
+        </h2>
+        <div class="content">
+          <ul class="ui list">
+              <li>Worked in an agile SCRUM development environment</li>
+              <li>Worked closely with UX throughout the development process</li>
+              <li>Built out complex web components and flows using Polymer</li>
+              <li>Managed and modified state in a Redux layer to ensure components were light-weight</li>
+              <li>Created customized styling guided by UX throughout the project</li>
+              <li>Wrote comprehensive and thorough tests using an assortment of assertion libraries</li>
+            </ul>
+        </div>
+        <div class="list-extra">
+        </br>
+            <div class="ui label">Javascript</div>
+            <div class="ui label">HTML</div>
+            <div class="ui label">CSS</div>
+            <div class="ui label">Polymer</div>
+            <div class="ui label">Redux</div>
+            <div class="ui label">Karma</div>
+            <div class="ui label">Sinon</div>
+            <div class="ui label">Chai</div>
+            <div class="ui label">Agile/SCRUM</div>
+            <div class="ui label">Git</div>
+          </div>
+  </div>
+  </div>
+  <div class="ui finverted vertical footer segment">
+    <div class="ui container">
+      Mazhar Buttar, 2017
+      <a href="https://www.linkedin.com/in/mb3311/">
+        <i class="fa fa-linkedin fa-2x"></i>
+      </a>
+      <a href="https://github.com/mazharrr">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+      <a href="mailto:maz.buttar@gmail.com">
+        <i class="fa fa-envelope fa-2x"></i>
+      </a>
+    </div>
+  </div>
+
+</body>
+
+</html>

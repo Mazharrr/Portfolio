@@ -1,0 +1,22 @@
+{
+  "name": "personal-site",
+  "version": "1.0.0",
+  "description": "My personal portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Mazhar B",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "nodemon": "^1.12.1",
+    "semantic-ui": "^2.2.13",
+    "volleyball": "^1.4.1"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1"
+  }
+}
