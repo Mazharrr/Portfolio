@@ -5,6 +5,11 @@ const { resolve } = require("path");
 const app = express();
 const fs = require("fs");
 const server = require("http").createServer(app);
+var http = require("http");
+
+setInterval(function() {
+    http.get("http://maz-portfolio.herokuapp.com");
+}, 300000);
 
 module.exports = app
   .use(require("volleyball"))
