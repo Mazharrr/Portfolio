@@ -9,6 +9,7 @@ const server = require("http").createServer(app);
 module.exports = app
   .use(require("volleyball"))
   .use(express.static(resolve(__dirname, "public")))
+  .use('/semantic', express.static((__dirname + '/node_modules/semantic-ui/dist/')))
   .use('/jquery', express.static((__dirname + '/node_modules/jquery/dist/')))
   .use('/font-awesome', express.static((__dirname + '/node_modules/font-awesome/')))
   .get("/", (_, res) =>
